@@ -1,7 +1,11 @@
+import banco_digital.*;
+
+
 public class App {
     public static void main(String[] args) throws Exception {
-        Conta cc= new ContaCorrente();
-        Conta poupanca= new ContaPoupanca();
+        Cliente cliente1 = new Cliente("Ivair");
+        Conta cc= new ContaCorrente(cliente1);
+        Conta poupanca= new ContaPoupanca(cliente1);
 
         cc.depositar(1500.00);
 
@@ -12,6 +16,7 @@ public class App {
        poupanca.imprimirExtrato();
 
        cc.imprimirExtrato();
+
     
     
     }

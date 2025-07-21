@@ -1,3 +1,5 @@
+package banco_digital;
+
 public abstract class Conta implements IConta {
 
     private static final int AGENCIA_PADRAO = 1;
@@ -6,10 +8,12 @@ public abstract class Conta implements IConta {
     protected int agencia;
     protected int numero;
     protected double saldo;
+    protected Cliente cliente;
 
-    public Conta() {
+    public Conta(Cliente cliente) {
         this.agencia = AGENCIA_PADRAO;
         this.numero = SEQUENCIAL++;
+        this.cliente = cliente;
     }
 
     public int getAgencia() {
@@ -42,6 +46,7 @@ public abstract class Conta implements IConta {
     }
 
     protected void imprimirDados() {
+        System.out.println(String.format("Titular: %s", cliente.getNome()));
         System.out.println(String.format("Agencia: %d", agencia));
         System.out.println(String.format("Número: %d", numero));
         System.out.println(String.format("Saldo: %.2f", saldo));
