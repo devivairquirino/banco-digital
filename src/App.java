@@ -7,6 +7,8 @@ public class App {
         Conta cc= new ContaCorrente(cliente1);
         Conta poupanca= new ContaPoupanca(cliente1);
 
+        System.out.println("");
+
         cc.depositar(1500.00);
 
        cc.imprimirExtrato();
@@ -16,6 +18,8 @@ public class App {
        poupanca.imprimirExtrato();
 
        cc.imprimirExtrato();
+
+       System.out.println(cliente1.getNome());
 
     
     
